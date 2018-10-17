@@ -14,6 +14,8 @@ The folder contains:
      * datasets for tweets
      * file of stop words
 
+Some parts of this project has been made by the lecturer BOUCHEKIF Abdessalam.
+
 ___
 Execution
 ---------
