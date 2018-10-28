@@ -24,6 +24,16 @@ Go into the root folder and launch this command if you want to train the program
 
     > python3 [cmd]
 
+
+___
+Bibliography
+-------
+
+- tweets preprocessing: https://www.analyticsvidhya.com/blog/2018/07/hands-on-sentiment-analysis-dataset-python/
+- bag of words: https://openclassrooms.com/fr/courses/4470541-analysez-vos-donnees-textuelles/4855001-representez-votre-corpus-en-bag-of-words
+- word embeddings: https://openclassrooms.com/fr/courses/4470541-analysez-vos-donnees-textuelles/4855006-effectuez-des-plongements-de-mots-word-embeddings
+- natural network LSTM: https://www.kaggle.com/ngyptr/lstm-sentiment-analysis-keras
+
 ___
 Authors
 -------
