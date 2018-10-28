@@ -9,10 +9,15 @@ from string import punctuation
 import sys
 from unidecode import unidecode
 
+# Tokenizer object
 tknzr = TweetTokenizer()
+
+# Lemmatizer object
 lemmatizer = WordNetLemmatizer()
+
+# Create stopwords set
 notstopwords = set(('not', 'no'))
-stopwords = set( stopwords.words('english')) - notstopwords
+stopwords = set(stopwords.words('english')) - notstopwords
 
 
 def data_preprocessing(path_tweets):
@@ -22,20 +27,22 @@ def data_preprocessing(path_tweets):
 	return tweets['text'], tweets['sentiment']
 
 
-
-def data_preprocessing (path_tweets,corpora):
-	data = pd.read_csv(path_tweets, encoding='utf-8',sep='\t', names=['id','class','text'])
+# Launch preprocessing into an entire file.csv
+def data_preprocessing(path_tweets, corpora):
+	# create a dataframe
+	data = pd.read_csv(path_tweets, encoding='utf-8', sep='\t', names=['id','class','text'])
+	# change values 0->negative, 1->neutral, 2->positive
 	if corpora=='train':
-		data['class'] = data['class'].apply(lambda x:0 if x=='negative' else (1 if x=='neutral' else 2 ))  # 0: 	negative, 1: neutral, 2: positive
+		data['class'] = data['class'].apply(lambda x: 0 if x=='negative' else (1 if x=='neutral' else 2 ))
+	# apply standartization
 	data['text'] = data['text'].apply(lambda x: standardization(x))
 	return data['text'], data['class']
 
 
-def data_preprocessing_test (path_tweets):
+def data_preprocessing_test(path_tweets):
 	data = pd.read_csv(path_tweets, encoding='utf-8',sep='\t')
 	data['text'] = data['Tweet'].apply(lambda x: standardization(x))
 	return data['text']
-
 
 
 def standardization(tweet):
@@ -60,16 +67,19 @@ def standardization(tweet):
 	tweet = ' '.join(tweet)
 	return tweet
 
-
-#print(standardization("@avalard Have a good trips. See you tomorrow at the Jurys Inn? :( :‑) :‑) o_0"))
-
-#print(standardization("I just have to remember to go online tomorrow and watch Grey\u2019s Anatomy \u002c Scandal \u002c &\u2019 Vampire Diaries :‑) ."))
+# Quick tests
 """
-t, c = data_preprocessing("/home/abdou/Documents/TP_transfer_learning_2018/data/task_A/data_3.csv")
+print(standardization("http://google.com @avalard Have a good trips. See you tomorrow at the Jurys Inn? :( :‑) :‑) o_0"))
+print(standardization("I just have to remember to go online tomorrow and watch Grey\u2019s Anatomy \u002c Scandal \u002c &\u2019 Vampire Diaries :‑) ."))
+"""
+
+"""
+file_path = "data/task_A/data_train_3.csv"
+t, c = data_preprocessing(file_path, 'train')
 
 MAX_SEQUENCE_LENGTH = 0
 for i in range(len(t)):
-	print (i,"  ",t[i])
+	print (i, "\t", t[i])
 	if len(t[i]) > MAX_SEQUENCE_LENGTH:
 		MAX_SEQUENCE_LENGTH = len(t[i])
 print(MAX_SEQUENCE_LENGTH)

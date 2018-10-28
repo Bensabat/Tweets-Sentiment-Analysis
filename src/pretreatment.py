@@ -10,11 +10,9 @@ def tweet_tokenizer(tweet_sentence):
 
 def tokens_stemming(tokens):
     """Function that return a list of stemmed token giving a list of token"""
-    lemma = nltk.wordnet.WordNetLemmatizer()
+    
     sno = nltk.stem.SnowballStemmer('english')
-
     tokens_stemming = [sno.stem(token) for token in tokens]
-
     return tokens_stemming
 
 

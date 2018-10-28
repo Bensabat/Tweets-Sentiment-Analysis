@@ -22,12 +22,12 @@ from keras.models import load_model
 
 from preprocessing import data_preprocessing, data_preprocessing_test
 
-EMBEDDING_FILE="/home/abdou/Téléchargements/GoogleNews-vectors-negative300.bin"
+EMBEDDING_FILE="data/GoogleNews-vectors-negative300.bin"
 EMBEDDING_DIM=300
 
-corpora_train_3="/home/abdou/Documents/TP_transfer_learning_2018/data/task_A/data_train_3.csv"
-corpora_train_7="/home/abdou/Documents/TP_transfer_learning_2018/data/task_A/data_train_7.csv"
-corpora_test_7="/home/abdou/Documents/TP_transfer_learning_2018/data/task_A/data_test_7.csv"
+corpora_train_3="data/task_A/data_train_3.csv"
+corpora_train_7="data/task_A/data_train_7.csv"
+corpora_test_7="data/task_A/data_test_7.csv"
 
 
 
