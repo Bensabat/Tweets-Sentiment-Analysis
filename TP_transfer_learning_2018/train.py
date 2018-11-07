@@ -137,8 +137,8 @@ def model2(x_train_3, y_train_3,x_val_3, y_val_3, embedding_layer,epochs, batch_
 			      optimizer='rmsprop',
 			      metrics=['acc'])
 	model2.summary()
-	history=model2.fit(x_train_3, y_train_3, validation_data=(x_val_3, y_val_3),epochs=6, batch_size=50)
-	model1.save("./model2.h5")
+	history = model2.fit(x_train_3, y_train_3, validation_data=(x_val_3, y_val_3), epochs=6, batch_size=50)
+	model2.save("./model2.h5")
 
 
 model1(x_train_3, y_train_3,x_val_3, y_val_3, embedding_layer)
@@ -151,8 +151,7 @@ labels_train_7 = to_categorical(np.asarray(sentiments_train_7), 7)
 labels_train_7 = labels_train_7[indices_train_7]
 
 
-split_idx = int(len(data_train_7)*0.85
-)
+split_idx = int(len(data_train_7)*0.85)
 x_train_7, x_val_7 = data_train_7[:split_idx], data_train_7[split_idx:]
 y_train_7, y_val_7 = labels_train_7 [:split_idx], labels_train_7[split_idx:]
 
@@ -172,7 +171,7 @@ model.add(Dense(64,activation='relu',name='dense2'))
 model.add(Dense(7,activation='softmax',name='dense3'))
 model.summary()
 model.compile(optimizer='rmsprop', loss='categorical_crossentropy', metrics=["accuracy"])
-history = model.fit(x_train_7, y_train_7,   validation_data=(x_val_7,y_val_7), epochs=11, batch_size=50)
+history = model.fit(x_train_7, y_train_7, validation_data=(x_val_7,y_val_7), epochs=11, batch_size=50)
 model.save("./model3.h5")
 
 

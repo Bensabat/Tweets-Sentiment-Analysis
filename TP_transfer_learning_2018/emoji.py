@@ -432,16 +432,12 @@ emojis = {
     u"oO":"😮",
 }
 
-
 def str2emoji(tweet):
 	for pos,ej in enumerate(tweet):
 		if ej in emojis:
 			tweet[pos]=emojis[ej]
 	return tweet
-           
-            	
-            	
-            	
-#e=str2emoji(["oO", "ok" , ";)","hhh",":‑)"])
+
+#e = str2emoji(["o_O", "oO", "ok" , ";)","hhh",":‑)"])
 #print(e)
 
