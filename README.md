@@ -36,4 +36,4 @@ EPITA School, SCIA Master 2 - Project for Deep Learning and Natural Language Pro
 
 Authors: 
 - **BENSABAT David** (bensab_d)
-- **YVONNE Xavier** (yvonne_x)
+- **YVONNE Xavier** (xavier.yvonne)
