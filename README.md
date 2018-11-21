@@ -29,6 +29,7 @@ Go into the root folder and launch this command if you want to train the program
 - word embeddings: https://openclassrooms.com/fr/courses/4470541-analysez-vos-donnees-textuelles/4855006-effectuez-des-plongements-de-mots-word-embeddings
 - create its own word-embeddings: https://github.com/RaRe-Technologies/gensim/blob/develop/docs/notebooks/word2vec.ipynb
 - natural network LSTM: https://www.kaggle.com/ngyptr/lstm-sentiment-analysis-keras
+- Emoji sentiment ranking: http://kt.ijs.si/data/Emoji_sentiment_ranking/about.html
 
 ## Authors
 

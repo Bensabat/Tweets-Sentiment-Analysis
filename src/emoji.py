@@ -430,6 +430,7 @@ emojis = {
     u"o.O":"😮",
     u"(o.o)":"😮",
     u"oO":"😮",
+    u"<3":"❤",
 }
 
 def str2emoji(tweet):
