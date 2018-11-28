@@ -1,12 +1,13 @@
-import pandas as pd
+import sys
 import re
+import pandas as pd
 import emoji
-from nltk.tokenize import TweetTokenizer
+
 from nltk import pos_tag
+from nltk.tokenize import TweetTokenizer
 from nltk.stem import WordNetLemmatizer
 from nltk.corpus import stopwords
 from string import punctuation
-import sys
 from unidecode import unidecode
 
 # Tokenizer object
@@ -38,7 +39,6 @@ def data_preprocessing(path_tweets, corpora):
 	data['text'] = data['text'].apply(lambda x: standardization(x))
 	return data['text'], data['class']
 
-
 def data_preprocessing_test(path_tweets):
 	data = pd.read_csv(path_tweets, encoding='utf-8',sep='\t')
 	data['text'] = data['Tweet'].apply(lambda x: standardization(x))
@@ -65,22 +65,5 @@ def standardization(tweet):
 	tweet = [lemmatizer.lemmatize(i,j[0].lower()) if j[0].lower() in ['a','n','v']  else lemmatizer.lemmatize(i) for i,j in pos_tag(tknzr.tokenize(tweet))]
 	tweet = [ i for i in tweet if (i not in stopwords) and (i not in punctuation ) ]
 	tweet = ' '.join(tweet)
+
 	return tweet
-
-# Quick tests
-"""
-print(standardization("http://google.com @avalard Have a good trips. See you tomorrow at the Jurys Inn? :( :‑) :‑) o_0"))
-print(standardization("I just have to remember to go online tomorrow and watch Grey\u2019s Anatomy \u002c Scandal \u002c &\u2019 Vampire Diaries :‑) ."))
-"""
-
-"""
-file_path = "data/task_A/data_train_3.csv"
-t, c = data_preprocessing(file_path, 'train')
-
-MAX_SEQUENCE_LENGTH = 0
-for i in range(len(t)):
-	print (i, "\t", t[i])
-	if len(t[i]) > MAX_SEQUENCE_LENGTH:
-		MAX_SEQUENCE_LENGTH = len(t[i])
-print(MAX_SEQUENCE_LENGTH)
-"""
