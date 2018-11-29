@@ -2,27 +2,49 @@
 
 ## Resume
 
-This project is about [description].
+The purpose of this project is to give a score of sentiment to a tweet using NLP methods and neural networks. This score can take 7 values defined as follow:
+
+- 3: very positive emotional
+- 2: moderately positive emotional
+- 1: slightly positive emotional
+- 0: neutral or mixed emotional
+- -1: slightly negative emotional
+- -2: moderately negative emotional
+- -3: very negative emotional
+
+For example, 
+
+- a score of `3` should be return with a tweet like `"I found #marmite in Australia. :) #happy"`,
+- a score of `-3` should be return with a tweet like `"I hate having ideas but being too afraid to share them 😔"`.
+
+The main issue is that there are very few tweets labeled at 7, but on the other hand there are a lot of tweets labeled at 3. So, a part of this project is to apply a transfere learning with a neural network trained with tweets labeled at 3 onto another neural network for tweets labeled at 7.
+
+Others part of the project is to preprocess the tweets, produce word embeddings to have a strong representations of the language, add some data sources like `Emoji Valence` or `Opinion Lexicon English` sources in ordre to have more semantics in our vectors.
 
 This program has been developed with Python programming language.
 
-The folder contains:
+The project contains:
 
 * src folder containing the source files
-* resources folder containing
+* data folder containing
      * datasets for tweets
-     * file of stop words
+     * embedding matrix
+* resources folder containing
+    * EV source (emoji valence)
+    * OLE source (opinion lexicon english)
+* results where models and predictions are produced
 
-Some parts of this project has been made by the lecturer BOUCHEKIF Abdessalam.
+## Instalation
+
+Go to `data/embedding/README.md` and follow the instruction.
 
 ## Execution
 
-Go into the root folder and launch this command if you want to train the program using dataset:
-
-    > python3 [cmd]
-
+Run the Notebook `src/train.ipynb` into Jupyter and launch the cells. The results are produced into `results/`.
 
 ## Bibliography
+
+Some internet sources that help me to understand the problem and propose a solution:
 
 - tweets preprocessing: https://www.analyticsvidhya.com/blog/2018/07/hands-on-sentiment-analysis-dataset-python/
 - bag of words: https://openclassrooms.com/fr/courses/4470541-analysez-vos-donnees-textuelles/4855001-representez-votre-corpus-en-bag-of-words
