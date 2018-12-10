@@ -1,6 +1,6 @@
 # Tweets-Sentiment-Analysis
 
-## Resume
+## Goal
 
 The purpose of this project is to give a score of sentiment to a tweet using NLP methods and neural networks. This score can take 7 values defined as follow:
 
@@ -21,6 +21,8 @@ The main issue is that there are very few tweets labeled at 7, but on the other 
 
 Others part of the project is to preprocess the tweets, produce word embeddings to have a strong representations of the language, add some data sources like `Emoji Valence` or `Opinion Lexicon English` sources in ordre to have more semantics in our vectors.
 
+## Resume
+
 This program has been developed with Python programming language.
 
 The project contains:
@@ -34,7 +36,7 @@ The project contains:
     * OLE source (opinion lexicon english)
 * results where models and predictions are produced
 
-## Instalation
+## Installation
 
 Go to `data/embedding/README.md` and follow the instruction.
 
